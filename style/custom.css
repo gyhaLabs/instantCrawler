@@ -1,0 +1,12 @@
+.title-block{
+	margin-bottom: 20px;
+	margin-top: 40px;
+}
+
+.content-block{
+	background: #fafafa;
+	border: 1px solid #eee;
+	border-radius: 6px;
+	margin-bottom: 20px;
+	padding: 30px 10px;
+}
