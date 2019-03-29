@@ -1,6 +1,6 @@
 <?php
 	/**
-	* @note Retrieve all the crawled data;
+	* @note Retrieve all the crawled products;
 	* @author Hunor-Arpad GYORGY;
 	* @date 2019-03-28
 	*/
@@ -15,28 +15,13 @@
 	);
 
 	try{
-		$allLogs = Pricelog::getAll();
-		
-		$inc = 0;
-		$tableHtml = "<table id='logList'>".
-						"<thead>".
-							"<tr>".
-								"<th>#</th>".
-								"<th>Name</th>".
-								"<th>Price</th>".
-								"<th>Time</th>".
-							"</tr>".
-						"</thead>".
-						"<tbody>";
+		$allLogs = Pricelog::getAllCrawledProducts();
 
+		$tableHtml = '';
 		foreach ($allLogs as $row) {
-			$inc++;
-			$tableHtml .= "<tr><td>".$inc."</td><td>".$row['name']."</td><td>".$row['price']."</td><td>".$row['timestamp']."</td></tr>";
+			$tableHtml .= "<option value='".$row['product_id']."'>".$row['name']."</option>";
 		}
 
-		$tableHtml .= "</tbody>".
-					"</table>";
-		
 		$response['data'] = $tableHtml;
 
 	} catch (Exception $e) {

@@ -10,3 +10,29 @@
 	margin-bottom: 20px;
 	padding: 30px 10px;
 }
+
+.content-block h5{
+	background: #ccc;
+    padding: 10px;
+}
+
+.loading{
+	position: fixed;
+    top: 0px;
+    background: #eee;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+    opacity: 0.5;
+    height: 100%;
+}
+.loading.hidden{
+	display: none;
+}
+.loading img{
+	margin-top: 10%;
+	max-width: 30%;
+}
+select#productSelector{
+	max-width: 300px;
+}
